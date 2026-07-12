@@ -286,7 +286,7 @@ GitHub:
 https://github.com/Jenish-69
 
 LinkedIn:
-(Add your LinkedIn profile)
+Jenish Jebaraj
 
 ---
 
