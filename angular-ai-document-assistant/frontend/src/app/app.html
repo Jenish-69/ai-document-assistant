@@ -1,0 +1,58 @@
+<div class="container">
+
+  <h1>AI Document Assistant</h1>
+  <p class="subtitle">Upload a PDF, ask questions, translate answers, and listen using speech.</p>
+
+  <div class="card">
+    <h2>📄 Upload PDF</h2>
+    <input type="file" (change)="onFileSelected($event)" accept=".pdf">
+    <p class="success">{{ uploadMessage }}</p>
+    <p *ngIf="totalChunks">Total Chunks: {{ totalChunks }}</p>
+  </div>
+
+  <div class="card">
+    <h2>💬 Ask a Question</h2>
+
+    <textarea placeholder="Type your question here..." [(ngModel)]="question"></textarea>
+    <button type="button" (click)="startListening()">
+  🎤 Speak Question
+</button>
+
+<p>{{ listeningMessage }}</p>
+
+    <select [(ngModel)]="selectedLanguage">
+      <option value="English">English</option>
+      <option value="Tamil">Tamil</option>
+      <option value="Hindi">Hindi</option>
+      <option value="Malayalam">Malayalam</option>
+    </select>
+
+    <button (click)="askAI()">Ask AI</button>
+
+<p class="loading" *ngIf="isLoading">
+  🤖 AI is thinking...
+</p>
+
+<p>Loading value: {{ isLoading }}</p>
+  </div>
+
+  <div class="card answer-card">
+  <h2>🤖 Answer</h2>
+
+<p>TEST TEXT</p>
+
+<p>Answer: {{ answer }}</p>
+<p>Loading: {{ isLoading }}</p>
+
+  <button class="speak-btn" (click)="speakAnswer()">🔊 Speak Answer</button>
+</div>
+
+  <div class="card" *ngIf="extractedText">
+    <h2>Extracted Text Preview</h2>
+    <p class="preview">{{ extractedText }}</p>
+  </div>
+
+<div class="card">
+  <h2>Total Chunks</h2>
+  <p>{{ totalChunks }}</p>
+</div>

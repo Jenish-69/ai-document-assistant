@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*.log
+
+# Virtual environments
+myenv/
+venv/
+.venv/
+.env
+
+# Audio
+audio/
+
+# Data (remove this line if you actually want to upload your PDFs)
+# data/
+
+# VS Code
+.vscode/
+
+# Pytest
+.pytest_cache/
+
+# Angular
+angular-ai-document-assistant/frontend/node_modules/
+angular-ai-document-assistant/frontend/.angular/
+angular-ai-document-assistant/frontend/dist/
